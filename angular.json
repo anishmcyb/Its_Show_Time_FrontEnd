@@ -35,7 +35,10 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+>>>>>>> b500877e5d333b70d9bd91096a476e13b58f81df
               "src/styles.css"
             ],
             "scripts": [],
@@ -100,7 +103,10 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+>>>>>>> b500877e5d333b70d9bd91096a476e13b58f81df
               "src/styles.css"
             ],
             "scripts": []
@@ -110,6 +116,10 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": "1e81fad0-17d6-4199-beb6-4c2668cbb7d2"
+=======
+    "analytics": "f76282b2-44aa-4a87-aedd-8215881ce921"
+>>>>>>> b500877e5d333b70d9bd91096a476e13b58f81df
   }
 }
