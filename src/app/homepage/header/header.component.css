@@ -23,8 +23,8 @@ ul {
 }
 
 .container {
-    width: 90%;
-    max-width: 1100px;
+    width: 100%;
+    max-width: 1400px;
     margin: auto;
 }
 
@@ -34,6 +34,7 @@ ul {
     align-items: center;
     justify-content: space-between;
     height: 60px;
+    width:100%;
     padding: 20px 0;
     font-size: 13px;
 }
@@ -182,6 +183,7 @@ ul {
 
 /* Follow */
 .follow {
+    padding-left: 25px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -224,7 +226,7 @@ ul {
 }
 
 .footer-inner {
-    max-width: 1100px;
+    max-width: 1410px;
     margin: 0 auto;
     padding: 0 20px 0 20px;
     display: flex;
