@@ -1,0 +1,19 @@
+.movie-card {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.movie-image img {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.movie-info {
+    flex: 1;
+}
+
+/* You can customize the styles further based on your preferences */

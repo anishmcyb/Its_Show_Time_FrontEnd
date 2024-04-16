@@ -1,0 +1,17 @@
+<h1>Event Details</h1>
+<div class="event-card" *ngFor="let event of events">
+    <div class="event-image">
+        <img [src]="event.eventPosterUrl" alt="Event Poster">
+    </div>
+    <div class="event-info">
+        <h3>{{ event.eventName }}</h3>
+        <p><strong>Language:</strong> {{ event.language }}</p>
+        <p><strong>Genre:</strong> {{ event.genre }}</p>
+        <p><strong>Duration:</strong> {{ event.duration }} minutes</p>
+        <p><strong>Release Date:</strong> {{ event.releaseDate | date }}</p>
+        <p><strong>Price:</strong> ${{ event.price }}</p>
+     
+    </div>
+    <a [routerLink]="['/events/updateEvent', event.eventId]">Update</a>
+    <hr>
+</div>

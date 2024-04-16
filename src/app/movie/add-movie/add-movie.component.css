@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.add-movie-form {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px auto;
+  width: 400px; /* Adjust width as needed */
+}
+
+.add-movie-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.form-group textarea {
+  height: 100px; /* Adjust height as needed */
+}
+
+.button-group {
+  display: flex; /* Arrange buttons horizontally */
+  justify-content: space-between; /* Distribute buttons evenly */
+  margin-top: 15px;
+}
+
+.button-group button {
+  background-color: #4CAF50; /* Green color for Add Movie */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button-group button:hover {
+  background-color: #3e8e41; /* Darker green on hover */
+}
+
+.button-group button:nth-child(2) { /* Style the second button (Clear) */
+  background-color: #f0ad4e; /* Orange color for Clear */
+}
+
+.button-group button:nth-child(2):hover {
+  background-color: #d68b18; /* Darker orange on hover */
+}
