@@ -1,0 +1,36 @@
+
+
+<div *ngIf="event">
+    <div class="movie_card">
+      <div class="image_section">
+        <img class="locandina" [src]="event.eventPosterUrl" />
+      </div>
+      <div class="content_section">
+        <div class="movie_header">
+          <h1>{{ event.eventName }}</h1>
+          <h4>{{ event.language }}</h4>
+          <span class="minutes">{{ event.duration }} min .
+            {{ event.genre }} .
+            {{ event.releaseDate }}</span>
+        </div>
+        <div class="movie_social">
+          <button>Book </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h1>About</h1>
+      <p>{{ event.description }}</p>
+    </div>
+    <hr>
+    <div class="section"  >
+      <h1>Artist</h1>
+      <img [src]="event.artistUrl" />
+      <p  class="artist_image">{{ event.artist }}</p>
+    </div>
+  </div>
+  
+  
+  
+  

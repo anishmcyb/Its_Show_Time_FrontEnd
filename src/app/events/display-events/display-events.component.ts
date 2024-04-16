@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Events } from '../../model/events';
 import { EventsService } from '../../services/events.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'display-events',
@@ -14,8 +15,9 @@ export class DisplayEventsComponent {
   subscription: Subscription;
   message: any;
   reload: boolean | undefined;
+ 
   
-  constructor(private service :EventsService){
+  constructor(private service :EventsService,private router: Router){
     this.subscription = this.service.getMessage().subscribe((message) => {
       this.message = message;
       this.reload = true;
@@ -41,4 +43,8 @@ export class DisplayEventsComponent {
       }
     })
   }
+  showEventDetails(event: any): void {
+    this.router.navigate(['/events/event-details', event.eventId]);
+  }
+  
 }

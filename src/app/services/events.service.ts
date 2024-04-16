@@ -10,7 +10,7 @@ export class EventsService {
 
 
 
-  url:string="http://localhost:3334/events"
+  url:string="http://localhost:8000/events"
   constructor(private http:HttpClient) { }
 
 
@@ -42,7 +42,7 @@ export class EventsService {
   {
     return this.http.get<Events>(`${this.url}/displayEventById/${id}`)
   }
-
+  
   updateEventDetails(event:Events):Observable<Events>
   {
     return this.http.put<Events>(`${this.url}/updateEvent`,event)
