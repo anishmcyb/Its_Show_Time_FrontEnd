@@ -1,0 +1,39 @@
+ body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    background-image: url("https://media.bizj.us/view/img/11382609/icetheaterspiderman*900xx3445-1942-0-184.jpg"); /* Update the path if needed */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h2 {
+    color: black;
+    margin-bottom: 20px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .buttons-container {
+    display: flex; /* To horizontally align buttons */
+    column-gap: 20px; /* Adjust the spacing between buttons if needed */
+  }
+  
+  button {
+    color: #fff;
+    background-color:  #ff0000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ff0000;
+  }
+  
+  

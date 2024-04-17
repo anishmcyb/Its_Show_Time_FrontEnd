@@ -1,0 +1,16 @@
+<!-- admin-login.component.html -->
+<h1>Admin Login</h1>
+<div class="login-container">
+  <form (ngSubmit)="login()">
+    <label for="adminUsername">Admin Username:</label>
+    <input type="text" id="adminUsername" name="adminUsername" [(ngModel)]="adminUsername" required>
+    <br>
+    <label for="adminPassword">Admin Password:</label>
+    <input type="password" id="adminPassword" name="adminPassword" [(ngModel)]="adminPassword" required>
+    <br>
+    <button type="submit">Admin Login</button>
+  </form>
+  
+  <!-- Display error message -->
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+</div>
