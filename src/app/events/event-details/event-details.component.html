@@ -1,4 +1,4 @@
-
+<!-- 
 
 <div *ngIf="event">
     <div class="movie_card">
@@ -33,4 +33,44 @@
   
   
   
-  
+   -->
+
+   <div *ngIf="event">
+    <div class="movie_card">
+        <img [src]="event.eventPosterUrl" class="blur-image" />
+        <div class="image_section">
+            <img class="locandina" [src]="event.eventPosterUrl" />
+        </div>
+        <div class="content_section">
+            <div class="movie_header">
+                <div class="title">
+                    <p class="movie_name">{{ event.eventName }}</p>
+                </div>
+                <h2>{{  event.language }}</h2>
+                <h4><span class="minutes">{{ event.duration }} min .
+                        {{ event.genre }} .
+                        {{ event.releaseDate }}</span></h4>
+            </div>
+            <div class="movie_social">
+                <button>Book Tickets</button>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <!-- Additional sections -->
+    <div class="information_section">
+        <div class="section">
+            <h1>About</h1>
+            <p>{{ event.description }}</p>
+        </div>
+        <hr>
+        <div class="rounde_image">
+            <h1>Artist</h1>
+            <img class="image" [src]="event.artistUrl" />
+            <p class="artist_image">{{ event.artist }}</p>
+        </div>
+    </div>
+</div>

@@ -1,61 +1,67 @@
 .movie_card {
-    display: flex;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-    height: 470px;
-  }
-  
-  .image_section {
-    flex: 1;
-    overflow: hidden;
-  }
-  
-  .locandina {
-    width: 100%;
-    height: auto;
-    margin-right: 10%; 
-  }
-  
-  .content_section {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .movie_header {
-    text-align: center;
-  }
-  
-  .movie_header h1,
-  .movie_header h4,
-  .movie_header .minutes,
-  .movie_header .type {
-    margin: 5px 0;
-  }
-  
-  .movie_social {
-    text-align: center;
-  }
-  
-  .movie_social button {
-    padding: 10px 20px;
-    background-color: #ff3d49;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    display: inline-block;
-  }
-  
-  .section {
-    margin-top: 20px;
-  }
-  
-  .section:last-child {
-    margin-bottom: 20px;
-  }
-  .artist_image {
-   border-radius: 50%;
+  position: relative;
+  display: flex;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  height: 470px;
+  overflow: hidden; /* Hide overflow content */
 }
+.movie_name{
+  font-size: 34px; 
+font-weight: bold; 
+font-family: 'Times New Roman', Times, serif, sans-serif;
+}
+.blur-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
+  filter: blur(10px); /* Adjust the blur intensity as needed */
+  z-index: -1; /* Place the blurred image behind the card */
+}
+
+.content_section {
+  position: relative;
+  flex: 1; /* Fill remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1; /* Ensure content is displayed above the blurred image */
+}
+
+.image_section {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.locandina {
+  width: 60%;
+  height: 400px;
+  margin-right: 10%;
+  margin-top: 33px;
+  margin-left: 150px;
+}
+
+.movie_social button {
+  padding: 10px 20px;
+  background-color: #ff3d49;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-block;
+}
+.information_section{
+  margin-left:60px;
+  width:50%;
+}
+.image{
+  height:120px;
+  border-radius: 50%;
+}
+
+/* Rest of the styles remain the same */

@@ -8,12 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
-import { EventsModule } from './events/events.module';
-import { HttpClient } from '@angular/common/http';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MovieModule } from './movie/movie.module';
+import { FormsModule } from '@angular/forms';
+import { AdminModule } from './admin/admin.module';
+import { AddMovieComponent } from './movie/add-movie/add-movie.component';
+import { EventModule } from './event/event.module';
 import { HomepageModule } from './homepage/homepage.module';
-
+import { EventsModule } from './events/events.module';
 
 @NgModule({
   declarations: [
@@ -26,10 +27,13 @@ import { HomepageModule } from './homepage/homepage.module';
     HttpClientModule,
     MatDialogModule,
  
-    EventsModule,
+    MovieModule,
     FormsModule,
-    ReactiveFormsModule,
+    AdminModule,
+    EventModule,
+    EventsModule,
     HomepageModule
+
   ],
   providers: [
     provideClientHydration()

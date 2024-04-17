@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FeedbackService } from '../../services/feedback.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Feedback } from '../../model/feedback';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-feedback',
@@ -9,7 +10,8 @@ import { Feedback } from '../../model/feedback';
   styleUrls: ['./add-feedback.component.css']
 })
 export class AddFeedbackComponent {
-  constructor(private service: FeedbackService) {}
+  
+  constructor(private service: FeedbackService,private router : Router) {}
 
   feedback = new FormGroup({
     rating: new FormControl("", [Validators.required]), 
@@ -52,6 +54,9 @@ export class AddFeedbackComponent {
       }
     );
   };
+  goToSuccessfulPage(){
+    this.router.navigate(['/feedback/successful']);
+  }
 }
 
 

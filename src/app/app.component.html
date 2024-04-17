@@ -1,27 +1,29 @@
-<h1>Welcome to Feedback Application</h1>
+<!-- <h1>Welcome to Feedback Application</h1>
 <a routerLink="feedback/addFeedback">Rate Now</a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a (click)="openDialog()" style="cursor: pointer;">Rate Feedback</a>
+<a (click)="openDialog()" style="cursor: pointer;">Rate Feedback</a> -->
 <a routerLink="feedback/displayFeedback">Display Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 
 
 
-<!-- <h1>App component</h1> -->
-<!-- <display-events></display-events> -->
-<!-- <div>
-    <a routerLink="events/insertEvent">Add Events</a>
-</div>
-<div>
-    <a routerLink="events/displayEvents">Display Events</a>
-</div>
-<div>
-    <a routerLink="events/searchEvent/eventName">Search Event</a>
-</div> -->
+<!-- <div class="navigation-links">
+  <a routerLink="movie/insert">Add Movie</a>
+  <a routerLink="movie/display">Display Movie</a>
+  
+  <a routerLink="movie/delete/movieName">Delete Movie</a>
 
+ 
+</div>
+
+
+<div class="router-outlet-container">
+  <router-outlet></router-outlet>
+</div> -->
 <app-header></app-header>
 
-
+<app-home></app-home>
 <router-outlet></router-outlet>
 
 <app-footer></app-footer>
+

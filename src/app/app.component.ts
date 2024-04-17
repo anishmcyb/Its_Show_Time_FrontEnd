@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FeedbackDialogService } from './services/feedback-dialog.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,6 @@ import { FeedbackDialogService } from './services/feedback-dialog.service';
 export class AppComponent {
   title = 'ItsShowTime';
 
-  constructor(private feedbackDialogService: FeedbackDialogService) { }
-
-  openDialog() {
-    this.feedbackDialogService.openDialog();
-  }
+constructor(){}
+ 
 }

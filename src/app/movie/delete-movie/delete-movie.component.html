@@ -1,0 +1,18 @@
+<!-- <h1>Delete Movie</h1>
+<form (ngSubmit)="deleteMovie(movieForm)" #movieForm="ngForm">
+    <label for="movieName">Movie Name</label>
+    <input type="text" id="movieName" name="movieName" [(ngModel)]="movieName" required>
+    <button type="submit">Delete Movie</button>
+</form> -->
+
+
+
+<div class="delete-movie-container">
+    <h1 class="delete-movie-heading">Delete Movie</h1>
+    <form (ngSubmit)="deleteMovie(movieForm)" #movieForm="ngForm">
+      <label for="movieName" class="delete-movie-label">Movie Name</label>
+      <input type="text" id="movieName" name="movieName" [(ngModel)]="movieName" required class="delete-movie-input">
+      <button type="submit" class="delete-movie-button">Delete Movie</button>
+    </form>
+  </div>
+  

@@ -6,12 +6,14 @@ import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
 import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DisplayFeedbackDetailsComponent } from './display-feedback-details/display-feedback-details.component';
+import { SuccessfullyPageComponent } from './successfully-page/successfully-page.component';
 
 
 @NgModule({
   declarations: [
     AddFeedbackComponent,
-    DisplayFeedbackDetailsComponent
+    DisplayFeedbackDetailsComponent,
+    SuccessfullyPageComponent
     ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { DisplayFeedbackDetailsComponent } from './display-feedback-details/disp
   ],
   exports:[
     AddFeedbackComponent,
-    DisplayFeedbackDetailsComponent
+    DisplayFeedbackDetailsComponent,
+    SuccessfullyPageComponent
   ]
 })
 export class FeedbackModule { }

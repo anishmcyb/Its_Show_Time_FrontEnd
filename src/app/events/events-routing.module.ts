@@ -12,7 +12,7 @@ const routes: Routes = [
     path:"events",
     children:[
       {
-        path:"displayEvents",
+        path:"showEvents",
         component:DisplayEventsComponent
       },
       {

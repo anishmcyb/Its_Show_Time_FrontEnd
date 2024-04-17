@@ -1,4 +1,6 @@
 export class Events {
+
+
     eventId?: number | undefined
     eventName: string | undefined | null = ""
     language: string | undefined | null = ""
@@ -28,3 +30,5 @@ export class Events {
     }
 
 }
+
+

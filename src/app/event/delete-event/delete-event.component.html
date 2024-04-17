@@ -1,0 +1,8 @@
+<div class="delete-event-container">
+    <h1 class="delete-event-heading">Delete Event</h1>
+    <form (ngSubmit)="deleteEvent(eventForm)" #eventForm="ngForm">
+      <label for="eventName" class="delete-event-label">Event Name</label>
+      <input type="text" id="eventName" name="eventName" [(ngModel)]="eventName" required class="delete-event-input">
+      <button type="submit" class="delete-event-button">Delete Event</button>
+    </form>
+  </div>

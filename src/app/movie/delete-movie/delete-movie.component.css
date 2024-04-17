@@ -1,0 +1,48 @@
+/* Style for the container */
+.delete-movie-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Style for the heading */
+  .delete-movie-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the form label */
+  .delete-movie-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Style for the input field */
+  .delete-movie-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Style for the submit button */
+  .delete-movie-button {
+    background-color: #dc3545; /* Red color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the submit button */
+  .delete-movie-button:hover {
+    background-color: #c82333; /* Darker red color */
+  }
+  
