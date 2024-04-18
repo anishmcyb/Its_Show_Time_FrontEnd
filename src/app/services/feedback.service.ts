@@ -22,6 +22,11 @@ export class FeedbackService {
     // return this.customers;
     return this.http.get<Feedback[]>(`${this.url}/displayAll`)
   }
+  
+  feedbackOfMovie(movieName: string): Observable<Feedback[]> {
+    return this.http.get<Feedback[]>(`${this.url}/displayByMovieName/${movieName}`);
+  }
+  
   openDialog(): void {
     this.dialog.open(AddFeedbackComponent, {
       width: '400px', 

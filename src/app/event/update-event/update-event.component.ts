@@ -5,15 +5,41 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { EventService } from '../../services/event.service';
 
+
+function isValidUrl(control: FormControl): { [key: string]: any } | null {
+  const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+
+  if (control.value && !urlPattern.test(control.value)) {
+    return { 'pattern': true }; // Use 'pattern' for the error key
+  }
+  
+  return null;
+}
+
+// Function to get today's date in the format "YYYY-MM-DD"
+function getTodayDate(): string {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = ('0' + (today.getMonth() + 1)).slice(-2);
+  const day = ('0' + today.getDate()).slice(-2);
+  return `${year}-${month}-${day}`;
+}
+
+
 @Component({
   selector: 'app-update-event',
   templateUrl: './update-event.component.html',
   styleUrl: './update-event.component.css'
 })
 export class UpdateEventComponent {
+  successMessage: string = ''; // Variable to hold success message
+  today: string;
+
   id: number = 0;
   event: Events | undefined;
-  constructor(private service: EventService, private r: ActivatedRoute, private router: Router) { }
+  constructor(private service: EventService, private r: ActivatedRoute, private router: Router) { 
+    this.today = getTodayDate(); 
+  }
 
   ngOnInit() {
     let eventId: string | null = this.r.snapshot.paramMap.get("id");
@@ -107,6 +133,15 @@ export class UpdateEventComponent {
       }
     )
   }
+
+  clearForm() {
+    this.eve.reset(); // This resets the form values
+    this.successMessage = ''; // Clear success message when form is reset
+  }
+  goBack() {
+    this.router.navigate(['/events/displayEvents']); // Navigate back to the previous page
+  }
+
 
 
 }

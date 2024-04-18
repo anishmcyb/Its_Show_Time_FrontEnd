@@ -51,6 +51,10 @@ export class EventService {
   // deleteMovieByName(movieName: string): Observable<any> {
   //   return this.http.delete(`${this.url}/deleteMovieByName/${movieName}`, { responseType: 'text' as 'json' });
   // }
+  
+  deleteEvent(eventName: string): Observable<any> {
+    return this.http.delete(`${this.url}/deleteMEventByName/${eventName}`, { responseType: 'text' as 'json' });
+  }
 
 
 

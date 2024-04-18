@@ -7,6 +7,7 @@ import { DeleteEventComponent } from './delete-event/delete-event.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { UpdateEventComponent } from './update-event/update-event.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     EventRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
 
   ],
   exports:[

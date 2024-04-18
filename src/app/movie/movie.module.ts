@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DisplayMoviesComponent } from './display-movies/display-movies.component';
 import { MoviePageComponent } from './movie-page/movie-page.component';
-
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { MoviePageComponent } from './movie-page/movie-page.component';
     MovieRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatIconModule
   ],
   exports: [
     AddMovieComponent,

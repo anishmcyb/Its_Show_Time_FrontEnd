@@ -19,10 +19,10 @@ const routes: Routes = [
       path:"display",
       component:MovieDetailsComponent
     },
-    {
+    /*{
       path: 'delete/:movieName',
       component: DeleteMovieComponent
-    },
+    },*/
     {
       path:"update/:id",
       component:UpdateMovieComponent

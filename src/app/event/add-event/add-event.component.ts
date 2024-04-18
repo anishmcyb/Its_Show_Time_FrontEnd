@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EventService } from '../../services/event.service';
 import { Events } from '../../model/events';
+import { Router } from '@angular/router';
 
 
 function isValidUrl(control: FormControl): { [key: string]: any } | null {
@@ -14,6 +15,16 @@ function isValidUrl(control: FormControl): { [key: string]: any } | null {
   return null;
 }
 
+function getTodayDate(): string {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = ('0' + (today.getMonth() + 1)).slice(-2);
+  const day = ('0' + today.getDate()).slice(-2);
+  return `${year}-${month}-${day}`;
+}
+
+
+
 @Component({
   selector: 'app-add-event',
   templateUrl: './add-event.component.html',
@@ -21,7 +32,14 @@ function isValidUrl(control: FormControl): { [key: string]: any } | null {
 })
 export class AddEventComponent {
 
-  constructor(private service: EventService) {}
+  successMessage: string = '';
+  today: string;
+
+  constructor(private service: EventService, private router: Router) {
+    this.today = getTodayDate();
+  }
+
+  
 
   event = new FormGroup({
     eventName: new FormControl('', [Validators.required]),
@@ -69,6 +87,15 @@ export class AddEventComponent {
       console.error('Form is invalid');
     }
   }
+  clearForm() {
+    this.event.reset(); // Reset the form
+    this.successMessage = ''; // Clear success message
+  }
+
+  goBack() {
+    this.router.navigate(['/Events']);
+  }
+
 
 
 

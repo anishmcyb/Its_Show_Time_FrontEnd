@@ -104,7 +104,7 @@ img {
 .movie_card {
     padding: 0 !important;
     width: 300px;
-    height: 451px; /* Adjusted height */
+    height: 466px; /* Adjusted height */
     margin: 14px;
     border-radius: 10px;
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);

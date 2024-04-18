@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { Events } from '../../model/events';
 import { MoviesService } from '../../services/movies.service';
 import { Movies } from '../../model/movies';
+import { Subscription } from 'rxjs';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +21,20 @@ export class HeaderComponent {
   searchTerm: string = '';
   lastSegment: string = '';
 
-  constructor(private eventService: EventsService, private movieService: MoviesService, private router: Router) { }
+  subscription: Subscription;
+  message:any;
+
+  
+
+  constructor(private eventService: EventsService, 
+    private movieService: MoviesService, private router: Router,
+    private userService : UserService) {
+    this.subscription = this.userService.getMessage().subscribe((message) => {
+    this.message = message;
+    console.log(this.message);
+  
+    });
+   }
 
   onOpen() {
     console.log("srrrrrr")

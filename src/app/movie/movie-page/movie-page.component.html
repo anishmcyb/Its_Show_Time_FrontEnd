@@ -37,5 +37,32 @@
             <img class="image" [src]="movie.directorUrl" />
             <p class="artist_image">{{ movie.director }}</p>
         </div>
+        <hr>
     </div>
-</div>
+    <div>
+
+
+        <div *ngIf="movie" class="reviews">
+
+
+            <!-- Button to fetch and display top reviews -->
+            <button (click)="feedbackOfMovie(movie)" ><h1>Top Reviews</h1></button>
+
+            <!-- Display feedbacks -->
+            <div class="feedback-container" *ngIf="feedbacks.length > 0">
+                <div *ngFor="let feedback of feedbacks" class="feedback-item">
+                    <div class="feedback-header">
+                        <h4>{{ feedback.movieName }}</h4>
+                        <div class="star-rating">
+                            &#9733; {{ feedback.rating }}/5
+                        </div>
+                    </div>
+                    <div class="feedback-body">
+                        <p>{{ feedback.hashtag }}</p>
+                        <p>{{ feedback.feedback }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

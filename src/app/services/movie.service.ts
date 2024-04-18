@@ -42,6 +42,9 @@ export class MovieService {
     return this.http.put<Movie>(`${this.url}/updateMovie`,movie)
   }
 
+  deleteMovie(movieName: string): Observable<any> {
+    return this.http.delete(`${this.url}/deleteMovieByName/${movieName}`, { responseType: 'text' as 'json' });
+  }
 
 
  

@@ -44,4 +44,28 @@
   .container {
     margin-top: 20px;
   }
-  
+  .btn-block {
+    display: block;
+    width: 10%;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 0; /* Adjust padding for smaller height */
+    cursor: pointer;
+    font-size: 15px; /* Decrease font size for smaller text */
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    justify-content: center;
+  }
+  .buttons{
+    /* margin-left:420px ; */
+    display: flex;
+    gap:20px;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-block:hover {
+    background-color: darkred;
+  }

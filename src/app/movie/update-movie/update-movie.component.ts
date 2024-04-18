@@ -4,16 +4,43 @@ import { Movie } from '../../model/movie';
 import { MovieService } from '../../services/movie.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+function isValidUrl(control: FormControl): { [key: string]: any } | null {
+  const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+
+  if (control.value && !urlPattern.test(control.value)) {
+    return { 'pattern': true }; // Use 'pattern' for the error key
+  }
+  
+  return null;
+}
+
+// Function to get today's date in the format "YYYY-MM-DD"
+function getTodayDate(): string {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = ('0' + (today.getMonth() + 1)).slice(-2);
+  const day = ('0' + today.getDate()).slice(-2);
+  return `${year}-${month}-${day}`;
+}
+
+
+
+
+
 @Component({
   selector: 'app-update-movie',
   templateUrl: './update-movie.component.html',
   styleUrl: './update-movie.component.css'
 })
 export class UpdateMovieComponent {
+  successMessage: string = ''; // Variable to hold success message
+  today: string;
 
   id: number = 0;
   movie: Movie | undefined;
-  constructor(private service: MovieService, private r: ActivatedRoute, private router: Router) { }
+  constructor(private service: MovieService, private r: ActivatedRoute, private router: Router) {
+     this.today = getTodayDate(); 
+   }
 
   ngOnInit() {
     let movieId: string | null = this.r.snapshot.paramMap.get("id");
@@ -109,5 +136,15 @@ export class UpdateMovieComponent {
     )
   }
 
+  clearForm() {
+    this.mov.reset(); // This resets the form values
+    this.successMessage = ''; // Clear success message when form is reset
+  }
+  goBack() {
+    this.router.navigate(['/movie/display']); // Navigate back to the previous page
+  }
 
-}
+
+  }
+
+

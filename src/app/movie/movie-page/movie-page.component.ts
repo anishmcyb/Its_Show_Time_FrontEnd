@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesService } from '../../services/movies.service';
 import { FeedbackService } from '../../services/feedback.service';
+import { Feedback } from '../../model/feedback';
 
 
 @Component({
@@ -16,8 +17,12 @@ export class MoviePageComponent {
   movieId: number | undefined;
   subscription: Subscription;
 
+  feedbacks: Feedback[] = []; // Define the feedbacks property
+
+
   constructor(
     private route: ActivatedRoute,
+    private feedbackService : FeedbackService,
     private service: MoviesService,
     private router: Router,
     private feedbackDialogService: FeedbackService
@@ -56,5 +61,16 @@ export class MoviePageComponent {
   
   openDialog() {
     this.feedbackDialogService.openDialog();
+  }
+  
+  feedbackOfMovie(movie: any): void {
+    this.feedbackService.feedbackOfMovie(movie.movieName).subscribe(
+      (feedbacks: Feedback[]) => {
+        this.feedbacks = feedbacks;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

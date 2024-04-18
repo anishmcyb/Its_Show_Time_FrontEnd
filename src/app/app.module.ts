@@ -9,16 +9,31 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { MovieModule } from './movie/movie.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminModule } from './admin/admin.module';
 import { AddMovieComponent } from './movie/add-movie/add-movie.component';
 import { EventModule } from './event/event.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { EventsModule } from './events/events.module';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { UserHomeComponent } from './user-home/user-home.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { HomeComponent } from './admin/home/home.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegisterComponent,
+    LoginComponent,
+    AdminLoginComponent,
+    AdminHomeComponent,
+    UserLoginComponent,
+    UserHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +41,7 @@ import { EventsModule } from './events/events.module';
     FeedbackModule,
     HttpClientModule,
     MatDialogModule,
+    ReactiveFormsModule,
  
     MovieModule,
     FormsModule,
@@ -36,7 +52,8 @@ import { EventsModule } from './events/events.module';
 
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
