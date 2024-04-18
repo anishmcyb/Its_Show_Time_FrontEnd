@@ -35,6 +35,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -44,6 +45,10 @@
               "entry": "server.ts"
             }
           },
+          "styles": [
+            "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+            "src/styles.css"
+          ],
           "configurations": {
             "production": {
               "budgets": [
@@ -99,6 +104,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -106,5 +112,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b55c75fd-19fe-4504-9e8b-5ed982ba0381"
   }
 }
