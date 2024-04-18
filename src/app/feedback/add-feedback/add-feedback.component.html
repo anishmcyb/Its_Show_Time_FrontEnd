@@ -1,0 +1,51 @@
+
+   <div>
+    <form [formGroup]="feedback" (ngSubmit)="insertFeedbackDetails()">
+      <div >
+        <h2>How was the movie?</h2>
+      </div>
+      <div>
+        <label>How would you rate the movie?</label>
+        <div class="star-rating">
+          <span class="star" (click)="setRating(1)" [class.filled]="isRatingFilled(1)">&#9733;</span>
+          <span class="star" (click)="setRating(2)" [class.filled]="isRatingFilled(2)">&#9733;</span>
+          <span class="star" (click)="setRating(3)" [class.filled]="isRatingFilled(3)">&#9733;</span>
+          <span class="star" (click)="setRating(4)" [class.filled]="isRatingFilled(4)">&#9733;</span>
+          <span class="star" (click)="setRating(5)" [class.filled]="isRatingFilled(5)">&#9733;</span>
+        </div>
+        <div *ngIf="feedback.controls.rating.invalid && (feedback.controls.rating.dirty || feedback.controls.rating.touched)">
+          <small class="text-danger" *ngIf="feedback.controls.rating.errors?.['required']">Rating is required.</small>
+        </div>
+      </div><br>
+  
+      <div>
+        <label>Movie Name</label>
+        <input type="text" formControlName="movieName">
+        <div *ngIf="feedback.controls.movieName.invalid && (feedback.controls.movieName.dirty || feedback.controls.movieName.touched)">
+          <small class="text-danger" *ngIf="feedback.controls.movieName.errors?.['required']">Movie Name is required.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label>Express yourself with hashtags!</label>
+        <input type="text" formControlName="hashtag">
+        <div *ngIf="feedback.controls.hashtag.invalid && (feedback.controls.hashtag.dirty || feedback.controls.hashtag.touched)">
+          <small class="text-danger" *ngIf="feedback.controls.hashtag.errors?.['required']">Hashtag is required.</small>
+          <small class="text-danger" *ngIf="feedback.controls.hashtag.errors?.['minlength']">Hashtag must be at least 4 characters long.</small>
+
+        </div>
+      </div>
+  
+      <div>
+        <label>Express more, write a review  (optional) </label>
+        <textarea formControlName="feedback"></textarea>
+        <!-- <div *ngIf="feedback.controls.feedback.invalid && (feedback.controls.feedback.dirty || feedback.controls.feedback.touched)">
+          <small class="text-danger" *ngIf="feedback.controls.feedback.errors?.['required']">Feedback is required.</small>
+          <small class="text-danger" *ngIf="feedback.controls.feedback.errors?.['minlength']">Feedback must be at least 10 characters long.</small>
+        </div> -->
+      </div>
+  
+      <button type="submit" (click) ="goToSuccessfulPage()">Submit Feedback</button>
+    </form>
+  </div>
+  

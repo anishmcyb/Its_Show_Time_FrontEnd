@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EventService } from '../../services/events.service';
+import { EventsService } from '../../services/events.service';
 
 
 
@@ -38,7 +38,7 @@ export class FindcityeventsComponent {
 
   
  
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventsService) { }
 
   toggleCitySelection(): void {
     this.citySelected = !this.citySelected;

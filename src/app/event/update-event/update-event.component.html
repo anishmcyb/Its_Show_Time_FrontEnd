@@ -1,0 +1,108 @@
+<body>
+    <button (click)="goBack()" class="back-button">
+        <i class="fas fa-arrow-left"></i> <!-- Font Awesome arrow-left icon -->
+    </button>
+
+<div class="update-event-form">
+ 
+    <form [formGroup]="eve" (ngSubmit)="updateEventDetails()">
+        <div class="form-group">
+            <label for="eventName">Event Name</label>
+            <input type="text" id="eventName" formControlName="eventName">
+            <div *ngIf="eve.get('eventName')?.touched && eve.get('eventName')?.errors">
+                <div *ngIf="eve.get('eventName')?.errors?.['required']">Event Name can't be empty</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" formControlName="city">
+            <div *ngIf="eve.get('city')?.touched && eve.get('city')?.errors">
+                <div *ngIf="eve.get('city')?.errors?.['required']">City can't be empty</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="language">Language</label>
+            <input type="text" id="language" formControlName="language">
+            <div *ngIf="eve.get('language')?.touched && eve.get('language')?.errors">
+                <div *ngIf="eve.get('language')?.errors?.['required']">Language can't be empty</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" formControlName="genre">
+            <div *ngIf="eve.get('genre')?.touched && eve.get('genre')?.errors">
+                <div *ngIf="eve.get('genre')?.errors?.['required']">Genre can't be empty</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="duration">Duration</label>
+            <input type="number" id="duration" formControlName="duration">
+            <div *ngIf="eve.get('duration')?.touched && eve.get('duration')?.errors">
+                <div *ngIf="eve.get('duration')?.errors?.['required']">Duration can't be empty</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="releaseDate">Release Date</label>
+            <input type="date" id="releaseDate" formControlName="releaseDate">
+            <div *ngIf="eve.get('releaseDate')?.touched && eve.get('releaseDate')?.errors">
+                <div *ngIf="eve.get('releaseDate')?.errors?.['required']">Release Date can't be empty</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" id="price" formControlName="price">
+            <div *ngIf="eve.get('price')?.touched && eve.get('price')?.errors">
+                <div *ngIf="eve.get('price')?.errors?.['required']">Price can't be empty</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="posterUrl">Poster URL</label>
+            <input type="text" id="posterUrl" formControlName="posterUrl">
+            <div *ngIf="eve.get('posterUrl')?.touched && eve.get('posterUrl')?.errors">
+                <div *ngIf="eve.get('posterUrl')?.errors?.['required']">Poster URL can't be empty</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="artist">Artist</label>
+            <input type="text" id="artist" formControlName="artist">
+            <div *ngIf="eve.get('artist')?.touched && eve.get('artist')?.errors">
+                <div *ngIf="eve.get('artist')?.errors?.['required']">Artist can't be empty</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="artistUrl">Artist URL</label>
+            <input type="text" id="artistUrl" formControlName="artistUrl">
+            <div *ngIf="eve.get('artistUrl')?.touched && eve.get('artistUrl')?.errors">
+                <div *ngIf="eve.get('artistUrl')?.errors?.['required']">Artist URL can't be empty</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" rows="5" formControlName="description"></textarea>
+            <div *ngIf="eve.get('description')?.touched && eve.get('description')?.errors">
+                <div *ngIf="eve.get('description')?.errors?.['required']">Description can't be empty</div>
+            </div>
+        </div>
+
+      
+
+
+        <div class="button-group">
+            <button type="submit">Update Event</button>
+            <button type="button" (click)="clearForm()">Clear</button>
+        </div>
+        <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div> <!-- Display success message -->
+    
+
+    </form>
+</div>

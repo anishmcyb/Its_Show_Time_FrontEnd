@@ -1,0 +1,112 @@
+<body>
+    <button (click)="goBack()" class="back-button">
+        <i class="fas fa-arrow-left"></i> <!-- Font Awesome arrow-left icon -->
+    </button>
+    
+    <div class="update-movie-form">
+
+        
+
+        <form [formGroup]="mov" (ngSubmit)="updateMovieDetails()">
+            <div class="form-group">
+                <label for="movieName">Movie Name</label>
+                <input type="text" id="movieName" formControlName="movieName">
+                <div *ngIf="mov.get('movieName')?.touched && mov.get('movieName')?.errors">
+                    <div *ngIf="mov.get('movieName')?.errors?.['required']">Movie Name can't be empty</div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" formControlName="city">
+                <div *ngIf="mov.get('city')?.touched && mov.get('city')?.errors">
+                    <div *ngIf="mov.get('city')?.errors?.['required']">City can't be empty</div>
+                </div>
+
+            </div>
+    
+            <div class="form-group">
+                <label for="language">Language</label>
+                <input type="text" id="language" formControlName="language">
+                <div *ngIf="mov.get('language')?.touched && mov.get('language')?.errors">
+                    <div *ngIf="mov.get('language')?.errors?.['required']">Language can't be empty</div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="genre">Genre</label>
+                <input type="text" id="genre" formControlName="genre">
+                <div *ngIf="mov.get('genre')?.touched && mov.get('genre')?.errors">
+                    <div *ngIf="mov.get('genre')?.errors?.['required']">Genre can't be empty</div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="duration">Duration</label>
+                <input type="number" id="duration" formControlName="duration">
+                <div *ngIf="mov.get('duration')?.touched && mov.get('duration')?.errors">
+                    <div *ngIf="mov.get('duration')?.errors?.['required']">Duration can't be empty</div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="releaseDate">Release Date</label>
+                <input type="date" id="releaseDate" formControlName="releaseDate"  [min]="today">
+                <div *ngIf="mov.get('releaseDate')?.touched && mov.get('releaseDate')?.errors">
+                    <div *ngIf="mov.get('releaseDate')?.errors?.['required']">Release Date can't be empty</div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" formControlName="price">
+                <div *ngIf="mov.get('price')?.touched && mov.get('price')?.errors">
+                    <div *ngIf="mov.get('price')?.errors?.['required']">Price can't be empty</div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="posterUrl">Poster URL</label>
+                <input type="text" id="posterUrl" formControlName="posterUrl">
+                <div *ngIf="mov.get('posterUrl')?.touched && mov.get('posterUrl')?.errors">
+                    <div *ngIf="mov.get('posterUrl')?.errors?.['required']">Poster URL can't be empty</div>
+                    <div *ngIf="mov.get('posterUrl')?.errors?.['pattern']">Invalid URL</div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="director">Director</label>
+                <input type="text" id="director" formControlName="director">
+                <div *ngIf="mov.get('director')?.touched && mov.get('director')?.errors">
+                    <div *ngIf="mov.get('director')?.errors?.['required']">Director can't be empty</div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="directorUrl">Director URL</label>
+                <input type="text" id="directorUrl" formControlName="directorUrl">
+                <div *ngIf="mov.get('directorUrl')?.touched && mov.get('directorUrl')?.errors">
+                    <div *ngIf="mov.get('directorUrl')?.errors?.['required']">Director URL can't be empty</div>
+                    <div *ngIf="mov.get('directorUrl')?.errors?.['pattern']">Invalid URL</div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="5" formControlName="description"></textarea>
+                <div *ngIf="mov.get('description')?.touched && mov.get('description')?.errors">
+                    <div *ngIf="mov.get('description')?.errors?.['required']">Description can't be empty</div>
+                </div>
+            </div>
+    
+            <div class="button-group">
+                <button type="submit">Update Movie</button>
+                <button type="button" (click)="clearForm()">Clear</button>
+            </div>
+            <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div> <!-- Display success message -->
+        
+        </form>
+    </div>
+    
+</body>
+

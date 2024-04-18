@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../../model/events';
-import { EventService } from '../../services/events.service';
+import { EventsService } from '../../services/events.service';
 
 @Component({
   selector: 'app-filterevents',
@@ -16,7 +16,7 @@ export class FilterEventsComponent implements OnInit {
   showGenreDropdown: boolean = false;
   showPriceRangeDropdown: boolean = false; // New property to toggle price range dropdown
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventsService) { }
 
   ngOnInit(): void {
     // Fetch initial events based on current selections

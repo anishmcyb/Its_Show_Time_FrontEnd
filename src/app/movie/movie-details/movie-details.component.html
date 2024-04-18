@@ -1,0 +1,28 @@
+<button (click)="goBack()" class="back-button">
+    <i class="fas fa-arrow-left"></i> <!-- Font Awesome arrow-left icon -->
+</button>
+
+<div class="movie-container">
+   
+    <div class="movie-card" *ngFor="let movie of movies">
+        <div class="movie-image">
+            <img [src]="movie.posterUrl" alt="Movie Poster">
+        </div>
+        <div class="movie-details">
+            <div class="icon-container">
+                <button class="edit-button" [routerLink]="['/movie/update', movie.movieId]">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <div class="spacer"></div> <!-- Spacer between icons -->
+                <button class="delete-button" (click)="movie.movieName && deleteMovie(movie.movieName)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

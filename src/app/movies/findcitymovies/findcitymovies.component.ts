@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MovieService } from '../../services/movies.service';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-findcitymovies',
@@ -32,7 +32,7 @@ export class FindcitymoviesComponent {
   citySelected: boolean = false;
   errorFetchingMovies:boolean = false;
  
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MoviesService) { }
 
   toggleCitySelection(): void {
     this.citySelected = !this.citySelected;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from '../../model/movies';
-import { MovieService } from '../../services/movies.service';
+import { Movie } from '../../model/movie';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-filtermovies',
@@ -17,7 +17,7 @@ export class FilterMoviesComponent implements OnInit {
   showGenreDropdown: boolean = false;
   errorFetchingMovies: boolean = false;
   
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MoviesService) { }
 
   ngOnInit(): void {
     // Fetch initial movies based on current selections

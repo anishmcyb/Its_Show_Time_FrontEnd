@@ -1,0 +1,39 @@
+<div class="menu-btn">
+    <i class="fas fa-bars fa-2x"></i>
+</div>
+
+<div class="container">
+    <!-- Nav -->
+    <nav class="main-nav">
+        <img src="assets/new_logo.jpg" alt="Microsoft" class="logo">
+
+        <ul class="main-menu">
+            <li><a routerLink="movie/showMovies">Movies</a></li>
+            <li><a routerLink="events/showEvents">Events</a></li>
+            <!-- <li><a href="#">Sports</a></li> -->
+        </ul>
+
+        <ul class="right-menu">
+
+            <li class="search-input-container">
+                <input type="text" #searchInput (input)="onInput(searchInput.value)">
+                <button (click)="clearInput()" class="clear-button">
+                    x
+                </button>
+                <button (click)="search(searchInput.value)">
+                    <i class="bi bi-search"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                </button>
+            </li>
+            
+            <li><a *ngIf="!message" routerLink="/app-login">Login/</a>
+                <a *ngIf="message" routerLink="/app-login" >Logout</a>
+                <a *ngIf="!message" routerLink="/app-register">Register</a> </li>
+            
+        </ul>
+    </nav>
+</div>
+
