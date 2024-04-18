@@ -1,0 +1,111 @@
+<form [formGroup]="event" (ngSubmit)="insertEventDetails()">
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="eventName">Event Name</label></td>
+                <td><input type="text" id="eventName" formControlName="eventName"></td>
+                <td>
+                    <div *ngIf="event.get('eventName')?.touched && event.get('eventName')?.errors">
+                        <div *ngIf="event.get('eventName')?.errors?.['required']">Event Name can't be empty</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="city">City</label></td>
+                <td><input type="text" id="city" formControlName="city"></td>
+                <td>
+                    <div *ngIf="event.get('city')?.touched && event.get('city')?.errors">
+                        <div *ngIf="event.get('city')?.errors?.['required']">City can't be empty</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="language">Language</label></td>
+                <td><input type="text" id="language" formControlName="language"></td>
+                <td>
+                    <div *ngIf="event.get('language')?.touched && event.get('language')?.errors">
+                        <div *ngIf="event.get('language')?.errors?.['required']">Language can't be empty</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="genre">Genre</label></td>
+                <td><input type="text" id="genre" formControlName="genre"></td>
+                <td>
+                    <div *ngIf="event.get('genre')?.touched && event.get('genre')?.errors">
+                        <div *ngIf="event.get('genre')?.errors?.['required']">Genre can't be empty</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="duration">Duration</label></td>
+                <td><input type="number" id="duration" formControlName="duration"></td>
+                <td>
+                    <div *ngIf="event.get('duration')?.touched && event.get('duration')?.errors">
+                        <div *ngIf="event.get('duration')?.errors?.['required']">Duration can't be empty</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="releaseDate">Release Date</label></td>
+                <td><input type="date" id="releaseDate" formControlName="releaseDate"></td>
+                <td>
+                    <div *ngIf="event.get('releaseDate')?.touched && event.get('releaseDate')?.errors">
+                        <div *ngIf="event.get('releaseDate')?.errors?.['required']">Release Date can't be empty</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="price">Price</label></td>
+                <td><input type="number" id="price" formControlName="price"></td>
+                <td>
+                    <div *ngIf="event.get('price')?.touched && event.get('price')?.errors">
+                        <div *ngIf="event.get('price')?.errors?.['required']">Price can't be empty</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="posterUrl">Poster URL</label></td>
+                <td><input type="text" id="posterUrl" formControlName="posterUrl"></td>
+                <td>
+                    <div *ngIf="event.get('posterUrl')?.touched && event.get('posterUrl')?.errors">
+                        <div *ngIf="event.get('posterUrl')?.errors?.['required']">Poster URL can't be empty</div>
+                        <div *ngIf="event.get('posterUrl')?.errors?.['pattern']">Invalid URL</div> <!-- Use 'pattern' here -->
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="artist">Artist</label></td>
+                <td><input type="text" id="director" formControlName="artist"></td>
+                <td>
+                    <div *ngIf="event.get('artist')?.touched && event.get('artist')?.errors">
+                        <div *ngIf="event.get('artist')?.errors?.['required']">Artist can't be empty</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="artistUrl">Artist URL</label></td>
+                <td><input type="text" id="artistUrl" formControlName="artistUrl"></td>
+                <td>
+                    <div *ngIf="event.get('artistUrl')?.touched && event.get('artistUrl')?.errors">
+                        <div *ngIf="event.get('artistUrl')?.errors?.['required']">Artist URL can't be empty</div>
+                        <div *ngIf="event.get('artistUrl')?.errors?.['pattern']">Invalid URL</div> <!-- Use 'pattern' here -->
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="description">Description</label></td>
+                <td><textarea id="description" rows="5" formControlName="description"></textarea></td>
+                <td>
+                    <div *ngIf="event.get('description')?.touched && event.get('description')?.errors">
+                        <div *ngIf="event.get('description')?.errors?.['required']">Description can't be empty</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Add Event</button></td>
+            </tr>
+        </tbody>
+    </table>
+</form>

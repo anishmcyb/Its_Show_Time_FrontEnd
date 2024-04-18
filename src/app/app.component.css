@@ -1,0 +1,22 @@
+/* Style for navigation links */
+.navigation-links {
+    margin-bottom: 20px; /* Adjust spacing as needed */
+  }
+  
+  .navigation-links a {
+    margin-right: 20px; /* Adjust spacing between links as needed */
+    text-decoration: none;
+    color: #333; /* Adjust link color as needed */
+  }
+  
+  .navigation-links a:hover {
+    color: #007bff; /* Adjust hover color as needed */
+  }
+  
+  /* Style for router outlet container */
+  .router-outlet-container {
+    border: 1px solid #ccc; /* Add border for container */
+    padding: 20px; /* Add padding for content */
+    border-radius: 4px; /* Add border radius for container */
+  }
+  
