@@ -8,6 +8,7 @@ import { SearchComponent } from './search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddEventsComponent } from './add-events/add-events.component';
 import { UpdateEventComponent } from './update-event/update-event.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 
 
@@ -17,6 +18,7 @@ import { UpdateEventComponent } from './update-event/update-event.component';
     SearchComponent,
     AddEventsComponent,
     UpdateEventComponent,
+    EventDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +32,7 @@ import { UpdateEventComponent } from './update-event/update-event.component';
     SearchComponent,
     AddEventsComponent,
     UpdateEventComponent,
+    EventDetailsComponent
   ]
 })
 export class EventsModule { }

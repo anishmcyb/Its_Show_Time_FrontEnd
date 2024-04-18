@@ -1,17 +1,23 @@
-<h1>Event Details</h1>
-<div class="event-card" *ngFor="let event of events">
-    <div class="event-image">
-        <img [src]="event.eventPosterUrl" alt="Event Poster">
+<button (click)="goBack()" class="back-button">
+    <i class="fas fa-arrow-left"></i> <!-- Font Awesome arrow-left icon -->
+</button>
+
+<div class="event-container">
+    <div class="event-card" *ngFor="let event of events">
+        <div class="event-image">
+            <img [src]="event.eventPosterUrl" alt="Event Poster">
+        </div>
+
+        <div class="button-container">
+            <button class="edit-button" [routerLink]="['/events/updateEvent', event.eventId]">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <div class="spacer"></div>
+            <button *ngIf="event.eventName" class="delete-button" (click)="deleteEvent(event.eventName)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+        <hr>
     </div>
-    <div class="event-info">
-        <h3>{{ event.eventName }}</h3>
-        <p><strong>Language:</strong> {{ event.language }}</p>
-        <p><strong>Genre:</strong> {{ event.genre }}</p>
-        <p><strong>Duration:</strong> {{ event.duration }} minutes</p>
-        <p><strong>Release Date:</strong> {{ event.releaseDate | date }}</p>
-        <p><strong>Price:</strong> ${{ event.price }}</p>
-     
-    </div>
-    <a [routerLink]="['/events/updateEvent', event.eventId]">Update</a>
-    <hr>
 </div>
+

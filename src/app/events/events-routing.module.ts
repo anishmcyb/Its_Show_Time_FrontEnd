@@ -4,6 +4,7 @@ import { DisplayEventsComponent } from './display-events/display-events.componen
 import { SearchComponent } from './search/search.component';
 import { AddEventsComponent } from './add-events/add-events.component';
 import { UpdateEventComponent } from './update-event/update-event.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,7 @@ const routes: Routes = [
     path:"events",
     children:[
       {
-        path:"displayEvents",
+        path:"showEvents",
         component:DisplayEventsComponent
       },
       {
@@ -25,6 +26,10 @@ const routes: Routes = [
       {
         path:"updateEvent/:id",
         component:UpdateEventComponent
+      },
+      {
+        path:"event-details/:id",
+        component : EventDetailsComponent
       }
     ]
   }

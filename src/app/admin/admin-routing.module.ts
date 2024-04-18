@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainAdminComponent } from './main-admin/main-admin.component';
 import { EventAdminComponent } from './event-admin/event-admin.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'Events',
     component:EventAdminComponent
+  },
+  {
+    path:'admin-home',
+    component:HomeComponent
   }
  
 ];

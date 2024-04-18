@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Movie } from '../../model/movie';
 import { MovieService } from '../../services/movie.service';
+import { Router } from '@angular/router';
 
 
 function isValidUrl(control: FormControl): { [key: string]: any } | null {
@@ -13,6 +14,17 @@ function isValidUrl(control: FormControl): { [key: string]: any } | null {
   
   return null;
 }
+
+// Function to get today's date in the format "YYYY-MM-DD"
+function getTodayDate(): string {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = ('0' + (today.getMonth() + 1)).slice(-2);
+  const day = ('0' + today.getDate()).slice(-2);
+  return `${year}-${month}-${day}`;
+}
+
+
 @Component({
   selector: 'app-add-movie',
   templateUrl: './add-movie.component.html',
@@ -20,7 +32,12 @@ function isValidUrl(control: FormControl): { [key: string]: any } | null {
 })
 export class AddMovieComponent {
 
-  constructor(private service: MovieService) {}
+  successMessage: string = ''; // Variable to hold success message
+  today: string;
+
+  constructor(private service: MovieService, private router: Router) {
+    this.today = getTodayDate(); // Set today's date when the component initializes
+  }
 
   movie = new FormGroup({
     movieName: new FormControl('', [Validators.required]),
@@ -30,14 +47,12 @@ export class AddMovieComponent {
     duration: new FormControl('', [Validators.required]),
     releaseDate: new FormControl('', [Validators.required]),
     price: new FormControl('', [Validators.required]),
-    posterUrl: new FormControl('', [Validators.required,isValidUrl]),
+    posterUrl: new FormControl('', [Validators.required, isValidUrl]),
     director: new FormControl('', [Validators.required]),
-    directorUrl: new FormControl('', [Validators.required,isValidUrl]),
+    directorUrl: new FormControl('', [Validators.required, isValidUrl]),
     description: new FormControl('', [Validators.required])
   });
 
-
- 
   insertMovieDetails() {
     if (this.movie.valid) {
       const movieData = new Movie(
@@ -57,6 +72,7 @@ export class AddMovieComponent {
       this.service.insertMovieDetails(movieData).subscribe(
         (response) => {
           console.log('Movie added successfully');
+          this.successMessage = 'Movie added successfully'; // Set success message
           console.log(response);
         },
         (error) => {
@@ -71,6 +87,10 @@ export class AddMovieComponent {
 
   clearForm() {
     this.movie.reset(); // This resets the form values
-}
+    this.successMessage = ''; // Clear success message when form is reset
+  }
+  goBack() {
+    this.router.navigate(['/Movies']); // Navigate back to the previous page
+  }
 
 }

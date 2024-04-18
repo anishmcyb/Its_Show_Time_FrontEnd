@@ -1,0 +1,68 @@
+<div *ngIf="movie">
+    <div class="movie_card">
+        <img [src]="movie.posterUrl" class="blur-image" />
+        <div class="image_section">
+            <img class="locandina" [src]="movie.posterUrl" />
+        </div>
+        <div class="content_section">
+            <div class="movie_header">
+                <div class="title">
+                    <p class="movie_name">{{ movie.movieName }}</p>
+                </div>
+                <div class="movie">
+                    <button (click)="openDialog()" style="cursor: pointer;">Rate Now</button>
+                </div>
+                <h2>{{ movie.language }}</h2>
+                <h4><span class="minutes">{{ movie.duration }} min .
+                        {{ movie.genre }} .
+                        {{ movie.releaseDate }}</span></h4>
+            </div>
+            <div class="movie_social">
+                <button>Book Tickets</button>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <div class="information_section">
+        <div class="section">
+            <h1>About</h1>
+            <p>{{ movie.description }}</p>
+        </div>
+        <hr>
+        <div class="rounde_image">
+            <h1>Director</h1>
+            <img class="image" [src]="movie.directorUrl" />
+            <p class="artist_image">{{ movie.director }}</p>
+        </div>
+        <hr>
+    </div>
+    <div>
+
+
+        <div *ngIf="movie" class="reviews">
+
+
+            <!-- Button to fetch and display top reviews -->
+            <button (click)="feedbackOfMovie(movie)" ><h1>Top Reviews</h1></button>
+
+            <!-- Display feedbacks -->
+            <div class="feedback-container" *ngIf="feedbacks.length > 0">
+                <div *ngFor="let feedback of feedbacks" class="feedback-item">
+                    <div class="feedback-header">
+                        <h4>{{ feedback.movieName }}</h4>
+                        <div class="star-rating">
+                            &#9733; {{ feedback.rating }}/5
+                        </div>
+                    </div>
+                    <div class="feedback-body">
+                        <p>{{ feedback.hashtag }}</p>
+                        <p>{{ feedback.feedback }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

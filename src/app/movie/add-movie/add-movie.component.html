@@ -1,103 +1,111 @@
 <body>
+    <button (click)="goBack()" class="back-button">
+       <i class="fas fa-arrow-left"></i> <!-- Font Awesome arrow-left icon -->
+   </button>
+   
+   <div class="add-movie-form">
+     
+         <h2>Add Movie</h2>
+      
+       <form [formGroup]="movie" (ngSubmit)="insertMovieDetails()">
+           <div class="form-group">
+               <label for="movieName">Movie Name</label>
+               <input type="text" id="movieName" formControlName="movieName">
+               <div *ngIf="movie.get('movieName')?.touched && movie.get('movieName')?.errors">
+                   <div *ngIf="movie.get('movieName')?.errors?.['required']">Movie Name can't be empty</div>
+               </div>
+           </div>
+   
+           <div class="form-group">
+               <label for="city">City</label>
+               <input type="text" id="city" formControlName="city">
+               <div *ngIf="movie.get('city')?.touched && movie.get('city')?.errors">
+                   <div *ngIf="movie.get('city')?.errors?.['required']">City can't be empty</div>
+               </div>
 
-    <div class="add-movie-form">
-        <h2>Add Movie</h2>
-        <form [formGroup]="movie" (ngSubmit)="insertMovieDetails()">
-            <div class="form-group">
-                <label for="movieName">Movie Name</label>
-                <input type="text" id="movieName" formControlName="movieName">
-                <div *ngIf="movie.get('movieName')?.touched && movie.get('movieName')?.errors">
-                    <div *ngIf="movie.get('movieName')?.errors?.['required']">Movie Name can't be empty</div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <label for="city">City</label>
-                <input type="text" id="city" formControlName="city">
-                <div *ngIf="movie.get('city')?.touched && movie.get('city')?.errors">
-                    <div *ngIf="movie.get('city')?.errors?.['required']">City can't be empty</div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <label for="language">Language</label>
-                <input type="text" id="language" formControlName="language">
-                <div *ngIf="movie.get('language')?.touched && movie.get('language')?.errors">
-                    <div *ngIf="movie.get('language')?.errors?.['required']">Language can't be empty</div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <label for="genre">Genre</label>
-                <input type="text" id="genre" formControlName="genre">
-                <div *ngIf="movie.get('genre')?.touched && movie.get('genre')?.errors">
-                    <div *ngIf="movie.get('genre')?.errors?.['required']">Genre can't be empty</div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <label for="duration">Duration</label>
-                <input type="number" id="duration" formControlName="duration">
-                <div *ngIf="movie.get('duration')?.touched && movie.get('duration')?.errors">
-                    <div *ngIf="movie.get('duration')?.errors?.['required']">Duration can't be empty</div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <label for="releaseDate">Release Date</label>
-                <input type="date" id="releaseDate" formControlName="releaseDate">
-                <div *ngIf="movie.get('releaseDate')?.touched && movie.get('releaseDate')?.errors">
-                    <div *ngIf="movie.get('releaseDate')?.errors?.['required']">Release Date can't be empty</div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <label for="price">Price</label>
-                <input type="number" id="price" formControlName="price">
-                <div *ngIf="movie.get('price')?.touched && movie.get('price')?.errors">
-                    <div *ngIf="movie.get('price')?.errors?.['required']">Price can't be empty</div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <label for="posterUrl">Poster URL</label>
-                <input type="text" id="posterUrl" formControlName="posterUrl">
-                <div *ngIf="movie.get('posterUrl')?.touched && movie.get('posterUrl')?.errors">
-                    <div *ngIf="movie.get('posterUrl')?.errors?.['required']">Poster URL can't be empty</div>
-                    <div *ngIf="movie.get('posterUrl')?.errors?.['pattern']">Invalid URL</div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <label for="director">Director</label>
-                <input type="text" id="director" formControlName="director">
-                <div *ngIf="movie.get('director')?.touched && movie.get('director')?.errors">
-                    <div *ngIf="movie.get('director')?.errors?.['required']">Director can't be empty</div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <label for="directorUrl">Director URL</label>
-                <input type="text" id="directorUrl" formControlName="directorUrl">
-                <div *ngIf="movie.get('directorUrl')?.touched && movie.get('directorUrl')?.errors">
-                    <div *ngIf="movie.get('directorUrl')?.errors?.['required']">Director URL can't be empty</div>
-                    <div *ngIf="movie.get('directorUrl')?.errors?.['pattern']">Invalid URL</div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description" rows="5" formControlName="description"></textarea>
-                <div *ngIf="movie.get('description')?.touched && movie.get('description')?.errors">
-                    <div *ngIf="movie.get('description')?.errors?.['required']">Description can't be empty</div>
-                </div>
-            </div>
-    
-            <div class="button-group">
-                <button type="submit">Add Movie</button>
-                <button type="button" (click)="clearForm()">Clear</button>
-            </div>
-        </form>
-    </div>
-    
-    </body>
+           </div>
+   
+           <div class="form-group">
+               <label for="language">Language</label>
+               <input type="text" id="language" formControlName="language">
+               <div *ngIf="movie.get('language')?.touched && movie.get('language')?.errors">
+                   <div *ngIf="movie.get('language')?.errors?.['required']">Language can't be empty</div>
+               </div>
+           </div>
+   
+           <div class="form-group">
+               <label for="genre">Genre</label>
+               <input type="text" id="genre" formControlName="genre">
+               <div *ngIf="movie.get('genre')?.touched && movie.get('genre')?.errors">
+                   <div *ngIf="movie.get('genre')?.errors?.['required']">Genre can't be empty</div>
+               </div>
+           </div>
+   
+           <div class="form-group">
+               <label for="duration">Duration</label>
+               <input type="number" id="duration" formControlName="duration">
+               <div *ngIf="movie.get('duration')?.touched && movie.get('duration')?.errors">
+                   <div *ngIf="movie.get('duration')?.errors?.['required']">Duration can't be empty</div>
+               </div>
+           </div>
+   
+           <div class="form-group">
+               <label for="releaseDate">Release Date</label>
+               <input type="date" id="releaseDate" formControlName="releaseDate"  [min]="today">
+               <div *ngIf="movie.get('releaseDate')?.touched && movie.get('releaseDate')?.errors">
+                   <div *ngIf="movie.get('releaseDate')?.errors?.['required']">Release Date can't be empty</div>
+               </div>
+           </div>
+   
+           <div class="form-group">
+               <label for="price">Price</label>
+               <input type="number" id="price" formControlName="price">
+               <div *ngIf="movie.get('price')?.touched && movie.get('price')?.errors">
+                   <div *ngIf="movie.get('price')?.errors?.['required']">Price can't be empty</div>
+               </div>
+           </div>
+   
+           <div class="form-group">
+               <label for="posterUrl">Poster URL</label>
+               <input type="text" id="posterUrl" formControlName="posterUrl">
+               <div *ngIf="movie.get('posterUrl')?.touched && movie.get('posterUrl')?.errors">
+                   <div *ngIf="movie.get('posterUrl')?.errors?.['required']">Poster URL can't be empty</div>
+                   <div *ngIf="movie.get('posterUrl')?.errors?.['pattern']">Invalid URL</div>
+               </div>
+           </div>
+   
+           <div class="form-group">
+               <label for="director">Director</label>
+               <input type="text" id="director" formControlName="director">
+               <div *ngIf="movie.get('director')?.touched && movie.get('director')?.errors">
+                   <div *ngIf="movie.get('director')?.errors?.['required']">Director can't be empty</div>
+               </div>
+           </div>
+   
+           <div class="form-group">
+               <label for="directorUrl">Director URL</label>
+               <input type="text" id="directorUrl" formControlName="directorUrl">
+               <div *ngIf="movie.get('directorUrl')?.touched && movie.get('directorUrl')?.errors">
+                   <div *ngIf="movie.get('directorUrl')?.errors?.['required']">Director URL can't be empty</div>
+                   <div *ngIf="movie.get('directorUrl')?.errors?.['pattern']">Invalid URL</div>
+               </div>
+           </div>
+   
+           <div class="form-group">
+               <label for="description">Description</label>
+               <textarea id="description" rows="5" formControlName="description"></textarea>
+               <div *ngIf="movie.get('description')?.touched && movie.get('description')?.errors">
+                   <div *ngIf="movie.get('description')?.errors?.['required']">Description can't be empty</div>
+               </div>
+           </div>
+   
+           <div class="button-group">
+               <button type="submit">Add Movie</button>
+               <button type="button" (click)="clearForm()">Clear</button>
+           </div>
+           <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div> <!-- Display success message -->
+       
+       </form>
+   </div>
+   
+   </body>
